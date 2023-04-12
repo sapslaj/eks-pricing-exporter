@@ -1,0 +1,82 @@
+linters:
+  presets:
+    - bugs
+    - comment
+    - complexity
+    - error
+    - format
+    - import
+    - metalinter
+    - module
+    - performance
+    - sql
+    - style
+    - test
+    - unused
+  disable:
+    # deprecated linters
+    - deadcode
+    - exhaustivestruct
+    - golint
+    - ifshort
+    - interfacer
+    - maligned
+    - nosnakecase
+    - scopelint
+    - structcheck
+    - varcheck
+    # disabled due to personal preference
+    - exhaustruct
+    - gomnd
+    - nlreturn
+    - tagliatelle
+    - unparam
+    - wrapcheck
+    - wsl
+    # disabled because of generics. https://github.com/golangci/golangci-lint/issues/2649
+    - rowserrcheck
+    - sqlclosecheck
+    - wastedassign
+    # TODO reevaluate
+    - containedctx
+    - gocritic
+    - goerr113
+    - musttag
+    - nestif
+    - nonamedreturns
+    - prealloc
+    - varnamelen
+
+linters-settings:
+  cyclop:
+    max-complexity: 15
+  funlen:
+    lines: 100
+  gci:
+    sections:
+      - standard
+      - default
+      - prefix(github.com/sapslaj/eks-node-viewer-exporter)
+      - blank
+      - dot
+    custom-order: true
+
+issues:
+  exclude:
+    - Line contains TODO/BUG/FIXME # godox
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - dupl
+        - exhaustive
+        - forcetypeassert
+        - funlen
+        - paralleltest # TODO
+        - goconst # TODO
+    - path: zz_generated
+      linters:
+        - gochecknoglobals
+        - gofumpt
+        - gofmt
+        - goimports
+        - unused
