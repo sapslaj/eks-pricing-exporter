@@ -23,23 +23,23 @@ DOCKERS = {
             "platform": "linux/amd64",
             "arch_tag": "amd64",
         },
-        {
-            "goarch": "arm64",
-            "platform": "linux/arm64/v8",
-            "arch_tag": "arm64v8",
-        },
-        {
-            "goarch": "arm",
-            "platform": "linux/arm/v7",
-            "arch_tag": "armv7",
-            "goarm": 7,
-        },
-        {
-            "goarch": "arm",
-            "platform": "linux/arm/v6",
-            "arch_tag": "armv6",
-            "goarm": 6,
-        },
+        # {
+        #     "goarch": "arm64",
+        #     "platform": "linux/arm64/v8",
+        #     "arch_tag": "arm64v8",
+        # },
+        # {
+        #     "goarch": "arm",
+        #     "platform": "linux/arm/v7",
+        #     "arch_tag": "armv7",
+        #     "goarm": 7,
+        # },
+        # {
+        #     "goarch": "arm",
+        #     "platform": "linux/arm/v6",
+        #     "arch_tag": "armv6",
+        #     "goarm": 6,
+        # },
     ],
     "manifests": {
         "repository": "ghcr.io/sapslaj/{{ .ProjectName }}",
