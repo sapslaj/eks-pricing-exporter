@@ -25,7 +25,7 @@ type Collector struct {
 }
 
 func NewCollector(ctx context.Context, cs *kubernetes.Clientset, pricingRepository *pricing.Repository) *Collector {
-	namespace := "eksnode"
+	namespace := "eks"
 	return &Collector{
 		parentCtx:         ctx,
 		cs:                cs,
