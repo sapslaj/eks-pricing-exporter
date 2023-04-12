@@ -51,64 +51,13 @@ dockers:
     image_templates:
       - ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}-amd64
       - ghcr.io/sapslaj/{{ .ProjectName }}:latest-amd64
-  - build_flag_templates:
-      - --label=org.opencontainers.image.source=https://github.com/sapslaj/{{.ProjectName}}
-      - --label=org.opencontainers.image.created={{.Date}}
-      - --label=org.opencontainers.image.title={{.ProjectName}}
-      - --label=org.opencontainers.image.revision={{.FullCommit}}
-      - --label=org.opencontainers.image.version={{.Version}}
-      - --platform=linux/arm64/v8
-    use: buildx
-    extra_files: []
-    goos: linux
-    goarch: arm64
-    goarm:
-    image_templates:
-      - ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}-arm64v8
-      - ghcr.io/sapslaj/{{ .ProjectName }}:latest-arm64v8
-  - build_flag_templates:
-      - --label=org.opencontainers.image.source=https://github.com/sapslaj/{{.ProjectName}}
-      - --label=org.opencontainers.image.created={{.Date}}
-      - --label=org.opencontainers.image.title={{.ProjectName}}
-      - --label=org.opencontainers.image.revision={{.FullCommit}}
-      - --label=org.opencontainers.image.version={{.Version}}
-      - --platform=linux/arm/v7
-    use: buildx
-    extra_files: []
-    goos: linux
-    goarch: arm
-    goarm: 7
-    image_templates:
-      - ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}-armv7
-      - ghcr.io/sapslaj/{{ .ProjectName }}:latest-armv7
-  - build_flag_templates:
-      - --label=org.opencontainers.image.source=https://github.com/sapslaj/{{.ProjectName}}
-      - --label=org.opencontainers.image.created={{.Date}}
-      - --label=org.opencontainers.image.title={{.ProjectName}}
-      - --label=org.opencontainers.image.revision={{.FullCommit}}
-      - --label=org.opencontainers.image.version={{.Version}}
-      - --platform=linux/arm/v6
-    use: buildx
-    extra_files: []
-    goos: linux
-    goarch: arm
-    goarm: 6
-    image_templates:
-      - ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}-armv6
-      - ghcr.io/sapslaj/{{ .ProjectName }}:latest-armv6
 docker_manifests:
   - name_template: ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}
     image_templates:
       - ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}-amd64
-      - ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}-arm64v8
-      - ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}-armv7
-      - ghcr.io/sapslaj/{{ .ProjectName }}:{{ .Version }}-armv6
   - name_template: ghcr.io/sapslaj/{{ .ProjectName }}:latest
     image_templates:
       - ghcr.io/sapslaj/{{ .ProjectName }}:latest-amd64
-      - ghcr.io/sapslaj/{{ .ProjectName }}:latest-arm64v8
-      - ghcr.io/sapslaj/{{ .ProjectName }}:latest-armv7
-      - ghcr.io/sapslaj/{{ .ProjectName }}:latest-armv6
 checksum:
   name_template: checksums.txt
 snapshot:
