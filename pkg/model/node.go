@@ -51,6 +51,20 @@ func (nct NodeCapacityType) String() string {
 	return string(nct)
 }
 
+type NodeStatus string
+
+const (
+	NodeStatusUnknown    NodeStatus = "Unknown"
+	NodeCordonedDeleting NodeStatus = "Cordoned/Deleting"
+	NodeDeleting         NodeStatus = "Deleting"
+	NodeCordoned         NodeStatus = "Cordoned"
+	NodeReady            NodeStatus = "Ready"
+)
+
+func (ns NodeStatus) String() string {
+	return string(ns)
+}
+
 func NewNode(n *v1.Node) *Node {
 	node := &Node{
 		node: *n,
@@ -84,6 +98,20 @@ func (n *Node) CapacityType() NodeCapacityType {
 		return NodeFargate
 	} else {
 		return NodeUnknownCapacityType
+	}
+}
+
+func (n *Node) Status() NodeStatus {
+	if n.Cordoned() && n.Deleting() {
+		return NodeCordonedDeleting
+	} else if n.Deleting() {
+		return NodeDeleting
+	} else if n.Cordoned() {
+		return NodeCordoned
+	} else if n.Ready() {
+		return NodeReady
+	} else {
+		return NodeStatusUnknown
 	}
 }
 

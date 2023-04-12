@@ -34,13 +34,13 @@ func NewCollector(ctx context.Context, cs *kubernetes.Clientset, pricingReposito
 			nodeInfo: prometheus.NewDesc(
 				prometheus.BuildFQName(namespace, "node", "info"),
 				"info labels about the node",
-				[]string{"node", "capacity_type", "instance_type", "zone", "region"},
+				[]string{"node", "capacity_type", "instance_type", "zone", "region", "status"},
 				nil,
 			),
 			hourlyPrice: prometheus.NewDesc(
 				prometheus.BuildFQName(namespace, "node", "hourly_price"),
 				"hourly price of node",
-				[]string{"node", "capacity_type", "instance_type", "zone", "region"},
+				[]string{"node", "capacity_type", "instance_type", "zone", "region", "status"},
 				nil,
 			),
 		},
@@ -74,6 +74,7 @@ func (c *Collector) Collect(ch chan<- prometheus.Metric) {
 			node.InstanceType(),          // "instance_type"
 			node.Zone(),                  // "zone"
 			node.Region(),                // "region"
+			node.Status().String(),       // "status"
 		)
 		ch <- prometheus.MustNewConstMetric(
 			c.metricDesc.hourlyPrice,
@@ -84,6 +85,7 @@ func (c *Collector) Collect(ch chan<- prometheus.Metric) {
 			node.InstanceType(),          // "instance_type"
 			node.Zone(),                  // "zone"
 			node.Region(),                // "region"
+			node.Status().String(),       // "status"
 		)
 	})
 }
