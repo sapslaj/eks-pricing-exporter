@@ -56,7 +56,7 @@ linters-settings:
     sections:
       - standard
       - default
-      - prefix(github.com/sapslaj/eks-node-viewer-exporter)
+      - prefix(github.com/sapslaj/eks-pricing-exporter)
       - blank
       - dot
     custom-order: true

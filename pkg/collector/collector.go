@@ -8,8 +8,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/sapslaj/eks-node-viewer-exporter/pkg/model"
-	"github.com/sapslaj/eks-node-viewer-exporter/pkg/pricing"
+	"github.com/sapslaj/eks-pricing-exporter/pkg/model"
+	"github.com/sapslaj/eks-pricing-exporter/pkg/pricing"
 )
 
 type collectorMetricDesc struct {

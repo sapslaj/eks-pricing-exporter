@@ -22,7 +22,7 @@ import (
 
 	v1 "k8s.io/api/core/v1"
 
-	"github.com/sapslaj/eks-node-viewer-exporter/pkg/pricing"
+	"github.com/sapslaj/eks-pricing-exporter/pkg/pricing"
 )
 
 type objectKey struct {

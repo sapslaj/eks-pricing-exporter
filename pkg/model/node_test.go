@@ -19,7 +19,7 @@ import (
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/sapslaj/eks-node-viewer-exporter/pkg/model"
+	"github.com/sapslaj/eks-pricing-exporter/pkg/model"
 )
 
 func testNode(name string) *v1.Node {

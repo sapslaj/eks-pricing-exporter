@@ -19,8 +19,8 @@ import (
 	"k8s.io/client-go/kubernetes"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	"github.com/sapslaj/eks-node-viewer-exporter/pkg/collector"
-	"github.com/sapslaj/eks-node-viewer-exporter/pkg/pricing"
+	"github.com/sapslaj/eks-pricing-exporter/pkg/collector"
+	"github.com/sapslaj/eks-pricing-exporter/pkg/pricing"
 )
 
 func main() {

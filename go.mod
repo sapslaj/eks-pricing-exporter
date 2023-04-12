@@ -1,4 +1,4 @@
-module github.com/sapslaj/eks-node-viewer-exporter
+module github.com/sapslaj/eks-pricing-exporter
 
 go 1.19
 

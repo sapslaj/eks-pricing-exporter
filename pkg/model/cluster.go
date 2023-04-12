@@ -23,7 +23,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/sapslaj/eks-node-viewer-exporter/pkg/k8spaginator"
+	"github.com/sapslaj/eks-pricing-exporter/pkg/k8spaginator"
 )
 
 type Cluster struct {
