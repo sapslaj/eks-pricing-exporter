@@ -15,7 +15,6 @@ DOCKERS = {
         ],
         "use": "buildx",
         "extra_files": [
-            "minimal-config.yaml",
         ],
     },
     "matrix": [
