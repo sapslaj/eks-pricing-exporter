@@ -26,6 +26,7 @@ linters:
     - structcheck
     - varcheck
     # disabled due to personal preference
+    - depguard
     - exhaustruct
     - gomnd
     - nlreturn
@@ -41,6 +42,7 @@ linters:
     - containedctx
     - gocritic
     - goerr113
+    - inamedparam
     - musttag
     - nestif
     - nonamedreturns
@@ -64,6 +66,7 @@ linters-settings:
 issues:
   exclude:
     - Line contains TODO/BUG/FIXME # godox
+    - indent-error-flow # revive
   exclude-rules:
     - path: _test\.go
       linters:
